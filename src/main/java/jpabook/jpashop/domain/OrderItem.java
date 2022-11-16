@@ -1,7 +1,14 @@
 package jpabook.jpashop.domain;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
@@ -18,47 +25,4 @@ public class OrderItem {
 
     private int orderPrice;
     private int count;
-
-    public OrderItem() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public Long getItemId() {
-        return itemId;
-    }
-
-    public int getOrderPrice() {
-        return orderPrice;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
-
-    public void setOrderPrice(int orderPrice) {
-        this.orderPrice = orderPrice;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }

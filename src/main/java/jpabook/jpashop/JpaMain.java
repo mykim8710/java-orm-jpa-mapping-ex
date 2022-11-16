@@ -14,10 +14,8 @@ public class JpaMain {
         tx.begin(); // db 트랜젝션을 시작
 
         try {
-
-
             tx.commit();    // 커밋
-        }catch (Exception e) {
+        } catch (Exception e) {
             tx.rollback();  // 롤백
         } finally {
             em.close();

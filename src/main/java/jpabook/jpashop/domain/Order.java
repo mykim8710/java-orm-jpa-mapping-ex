@@ -1,8 +1,15 @@
 package jpabook.jpashop.domain;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -18,39 +25,4 @@ public class Order {
 
     @Enumerated(EnumType.STRING) // EnumType.ORDINAL : 순서로 들어가기때문에 가급적 사용 X
     private OrderStatus orderStatus;
-
-    public Order() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public LocalDateTime getOrderDate() {
-        return orderDate;
-    }
-
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public void setOrderDate(LocalDateTime orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
-    }
 }
