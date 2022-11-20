@@ -27,6 +27,8 @@ Java ORM JPA - example Project
     - **Orders - Item, N : N  ⇒  Order - OrderItem, 1 : N  |  OrderItem - Item, N : 1**
 
 - 연관관계 매핑
-  - Order - Member    | N : 1, 양방향 매핑
-  - OrderItem - Order | N : 1, 양방향 매핑
-  - Item - OrderItem  | N : 1, 단방향 매핑
+  - Order - Member    |  N : 1, 양방향 매핑
+  - OrderItem - Order |  N : 1, 양방향 매핑
+  - Item - OrderItem  |  N : 1, 단방향 매핑
+  - Order - Delivery  |  1 : 1, 양방향 매핑
+  - Item - Category   |  N : M, 양방향 매핑
