@@ -13,15 +13,22 @@ import javax.persistence.*;
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ORDER_ITEM_ID")
     private Long id;
 
-    @Column(name = "ORDER_ID")
-    private Long orderId;
+//    @Column(name = "ORDER_ID")
+//    private Long orderId;
 
-    @Column(name = "ITEM_ID")
-    private Long itemId;
+    @ManyToOne
+    @JoinColumn(name = "ORDER_ID")
+    private Order order;
+
+//    @Column(name = "ITEM_ID")
+//    private Long itemId;
+    @ManyToOne // 외래키 관리, 연관관계의 주인
+    @JoinColumn(name = "ITEM_ID")
+    private Item item;
 
     private int orderPrice;
     private int count;

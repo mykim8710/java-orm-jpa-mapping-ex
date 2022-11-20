@@ -25,3 +25,8 @@ Java ORM JPA - example Project
     - 반대로 같은 상품도 여러 번 주문될 수 있다.
     - 주문상품 이라는 모델을 만들어서 다대다 관계를 일다대, 다대일 관계로 풀어냄
     - **Orders - Item, N : N  ⇒  Order - OrderItem, 1 : N  |  OrderItem - Item, N : 1**
+
+- 연관관계 매핑
+  - Order - Member    | N : 1, 양방향 매핑
+  - OrderItem - Order | N : 1, 양방향 매핑
+  - Item - OrderItem  | N : 1, 단방향 매핑
