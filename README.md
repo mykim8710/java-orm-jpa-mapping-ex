@@ -32,3 +32,8 @@ Java ORM JPA - example Project
   - Item - OrderItem  |  N : 1, 단방향 매핑
   - Order - Delivery  |  1 : 1, 양방향 매핑
   - Item - Category   |  N : M, 양방향 매핑
+
+- 고급매핑
+  - 상속관계 매핑
+    - Item - Album, Book, Movie
+  - @MappedSuperclass : BaseEntity

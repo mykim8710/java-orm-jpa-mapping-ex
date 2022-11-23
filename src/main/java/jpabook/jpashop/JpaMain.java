@@ -1,8 +1,8 @@
 package jpabook.jpashop;
 
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
-import jpabook.jpashop.domain.OrderStatus;
+import jpabook.jpashop.domain.Album;
+import jpabook.jpashop.domain.Book;
+import jpabook.jpashop.domain.Movie;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -40,6 +40,46 @@ public class JpaMain {
 //
 //            em.flush();
 //            em.clear();
+
+
+//            // 상속관계 매핑 테스트
+//            // movie insert
+//            Movie movie = new Movie();
+//            movie.setActor("actor1");
+//            movie.setDirector("director1");
+//            movie.setName("name~");
+//            movie.setPrice(10000);
+//            em.persist(movie);
+//
+//            // Album insert
+//            Album album = new Album();
+//            album.setName("album name");
+//            album.setPrice(20000);
+//            album.setArtist("album artist");
+//            em.persist(album);
+//
+//            // book insert
+//            Book book = new Book();
+//            book.setIsbn("isbn");
+//            book.setAuthor("book author");
+//            book.setPrice(222);
+//            book.setName("book name");
+//            em.persist(book);
+//
+//            em.flush();
+//            em.clear();
+//
+//            // movie 조회
+//            Movie findMovie = em.find(Movie.class, movie.getId());
+//            System.out.println("findMovie = " + findMovie);
+//
+//            // album 조회
+//            Album findAlbum = em.find(Album.class, album.getId());
+//            System.out.println("findAlbum = " + findAlbum);
+//
+//            // book 조회
+//            Book findBook = em.find(Book.class, book.getId());
+//            System.out.println("findBook = " + findBook);
 
             tx.commit();    // 커밋
         } catch (Exception e) {
