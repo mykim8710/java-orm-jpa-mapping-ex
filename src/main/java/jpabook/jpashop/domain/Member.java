@@ -19,7 +19,7 @@ public class Member extends BaseEntity {
     private Long id;
 
     // 양방향 연관관계 매핑 : 꼭 필요한것은 아니다
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member")  // default (fetch = FetchType.LAZY)
     private List<Order> orders = new ArrayList<>();
 
     // 양방향 연관관계 편의 메서드(Member - Order, 1 : N)

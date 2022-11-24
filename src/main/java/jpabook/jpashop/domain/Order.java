@@ -23,7 +23,7 @@ public class Order extends BaseEntity {
 //    @Column(name = "MEMBER_ID")
 //    private Long memberId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)  // default (fetch = FetchType.EAGER)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
@@ -33,7 +33,7 @@ public class Order extends BaseEntity {
     private OrderStatus orderStatus;
 
     // 양방향 연관관계 매핑 : 꼭 필요한것은 아니다
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) // default (fetch = FetchType.LAZY)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     // 양방향 연관관계 편의 메서드(Order - OrderItem, 1 : N)
@@ -42,7 +42,7 @@ public class Order extends BaseEntity {
         orderItem.setOrder(this);
     }
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)  // default (fetch = FetchType.EAGER)
     @JoinColumn(name = "DELIVERY_ID")
     private Delivery delivery;
 }

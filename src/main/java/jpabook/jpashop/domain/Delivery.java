@@ -22,6 +22,7 @@ public class Delivery extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private DeliveryStatus deliveryStatus;
 
-    @OneToOne(mappedBy = "delivery")    // Delivery 1:1 양방향
+    // Delivery 1:1 양방향
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY) // default (fetch = FetchType.EAGER)
     private Order order;
 }
