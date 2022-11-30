@@ -44,3 +44,10 @@ Java ORM JPA - example Project
   - **영속성 전이 설정**
     - Order → Delivery를 영속성 전이 ALL 설정 : Order를 생성할때 Delivery도 생성
     - Order → OrderItem을 영속성 전이 ALL 설정 : Order를 생성할때 OrderItem도 생성
+
+- 값타입 매핑
+  - Member, Delivery
+    - Address @Embeddable
+      - String city
+      - String street
+      - String zipcode

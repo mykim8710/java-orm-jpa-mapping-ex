@@ -29,7 +29,10 @@ public class Member extends BaseEntity {
     }
 
     private String name;
-    private String city;
-    private String street;
-    private String zipCode;
+
+//    private String city;
+//    private String street;
+//    private String zipCode;
+    @Embedded
+    private Address address;
 }
